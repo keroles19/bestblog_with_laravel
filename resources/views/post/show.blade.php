@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
- 
+
 <div class="card mt-4">
     <div class="card-header">
       {{$post->title}}
@@ -18,8 +18,8 @@
     @method('DELETE')
     <button type="submit" class="btn btn-danger float-left">Delete</button>
     </form>
-    @endif 
+    @endif
     @endauth
     </div>
-  </div>   
+  </div>
 @endsection

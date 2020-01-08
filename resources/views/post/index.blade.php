@@ -9,9 +9,9 @@
                   {{-- <div class="card">
                       <img class="card-img-top" src=".../100px180/" alt="Card image cap">
                         <div class="card-header bg-dark text-white">
-                        <h6>  {{$post->title}} <span class="float-right text-muted"> created by : 
-                        @if(auth()->user()->id == $post->user_id) You   
-                         @else  {{auth()->user()->name}} 
+                        <h6>  {{$post->title}} <span class="float-right text-muted"> created by :
+                        @if(auth()->user()->id == $post->user_id) You
+                         @else  {{auth()->user()->name}}
                          @endif
                         </span> </h6>
                         </div>
@@ -28,7 +28,7 @@
                             <p class="card-text">{{$post->body}}</p>
                             <hr>
                               <span class="text-muted">created at : {{$post->created_at}}</span>
-                            <a href={{'/post/'.$post->id}} class="btn btn-primary">Details</a>                          </div>
+                            <a href="{{'/post/'.$post->id}}" class="btn btn-primary">Details</a>                          </div>
                         </div>
                       </div>
          @endforeach
@@ -37,7 +37,7 @@
        <div  class="col-md-2">
         <div class="card">
           <div class="card-header bg-primary text-white">
-           posts Count 
+           posts Count
           </div>
           <div class="card-body">
             <h5 class="card-title">{{$count}}</h5>
@@ -50,5 +50,5 @@
     {{$posts->links()}}
       </div>
     </div>
-   
+
 @endsection

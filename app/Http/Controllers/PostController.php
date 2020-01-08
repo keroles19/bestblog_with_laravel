@@ -26,9 +26,9 @@ class PostController extends Controller
         return view('post.create');
     }
 
-    
+
     public function store(Request $request) {
-        
+
 
            $request->validate([
            'title'=>'required',
@@ -57,7 +57,7 @@ class PostController extends Controller
 
         public function edit($id) {
 
-            
+
             $post = post::find($id);
             if(auth()->user()->id !== $post->user_id ){
                 return redirect('/post')->with('error','you are not login in');
@@ -66,19 +66,19 @@ class PostController extends Controller
         }
 
         public function update(Request $request ,$id) {
-           
+
             $request->validate([
-            
+
             'title'=>'required',
             'body'=>'required'
             ]);
- 
+
             $post = post::find($id);
             $post->title = $request->title;
             $post->body = $request->body;
             $post->save();
             return redirect('post')->with('status' , 'post was updated successfuly :)');
- 
+
          }
          public function destroy($id) {
 
